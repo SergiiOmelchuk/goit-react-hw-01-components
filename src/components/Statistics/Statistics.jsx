@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Statistics = ({ stats, tittle }) => {
   // tittle = "Uploud stats"
   return (
@@ -15,5 +17,13 @@ const Statistics = ({ stats, tittle }) => {
     </section>
   );
 };
+
+Statistics.propTypes = {
+  tittle: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.shape ({
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired
+  }))
+}
 
 export default Statistics;
